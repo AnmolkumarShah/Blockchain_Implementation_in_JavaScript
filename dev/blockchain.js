@@ -1,9 +1,12 @@
 const sha256 = require("sha256");
+const currentNodeUrl = process.argv[3];
 
 class Blockchain {
   constructor() {
     this.chain = [];
     this.pendingTransactions = [];
+    this.currentNodeUrl = currentNodeUrl;
+    this.networkNodes = [];
 
     // GENESIS BLOCK - first block in the chain of blocks
     // Since it is the first, it will not have previous hash
